@@ -18,7 +18,9 @@ function moveDodgerLeft() {
     const left = parseInt(leftNumbers, 10);
 
     if (left > 0) {
-        dodger.style.left = `${left - 1}px`;
+
+        dodger.style.left = `${left - 10}px`;
+        //the line of code above determines how fast it moves across the screen to the left 
     }
 }
 
@@ -27,9 +29,12 @@ function moveDodgerRight() {
     const leftNumbers = dodger.style.left.replace("px", "");
     const left = parseInt(leftNumbers, 10);
 
-    // expects the 200 value below to be < 179.      if >179 the test fails
-    if (left < 200) {
+    // expects the 351 value below to be < 179.      if >179 the test fails
+    //any values larger than the 351 number forces it to fall off the edge 
+    if (left < 351) {
+
       dodger.style.left = `${left + 10}px`;
+      //the line of code above determines how fast it moves across the screen to the right 
     }
   }
 
